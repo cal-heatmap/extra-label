@@ -1,0 +1,61 @@
+{
+  "name": "@cal-heatmap/extra-label",
+  "version": "1.0.0-beta.0",
+  "description": "Extra label plugin for cal-heatmap",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cal-heatmap/extra-label.git"
+  },
+  "homepage": "https://cal-heatmap.com",
+  "scripts": {
+    "prepare": "npm run typecheck && npm run lint && npm run build",
+    "format": "npm run lint -- --fix",
+    "lint": "npx eslint src/",
+    "build": "rm -rf dist/* && rollup -c",
+    "dev": "rollup --config -w",
+    "typecheck": "npx tsc --noEmit"
+  },
+  "node": ">=14.16",
+  "author": "",
+  "license": "MIT",
+  "browserslist": "last 2 versions, not dead, > 0.2%",
+  "main": "./dist/extra-label.esm.js",
+  "types": "./src/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/extra-label.esm.js",
+      "require": "./dist/extra-label.js",
+      "types": "./src/types.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "cal-heatmap": "4.3.0-beta.1"
+  },
+  "dependencies": {
+    "core-js": "^3.36.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "prettier": "^3.0.0",
+    "rollup": "^4.0.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "tsd": "^0.30.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist",
+    "src/types.d.ts"
+  ]
+}
